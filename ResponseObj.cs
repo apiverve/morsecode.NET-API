@@ -4,49 +4,82 @@ using Newtonsoft.Json;
 
 namespace APIVerve
 {
-public class stats
-{
-    [JsonProperty("characters")]
-    public int characters { get; set; }
+    /// <summary>
+    /// Stats data
+    /// </summary>
+    public class Stats
+    {
+        [JsonProperty("characters")]
+        public int Characters { get; set; }
 
-    [JsonProperty("dits")]
-    public int dits { get; set; }
+        [JsonProperty("dits")]
+        public int Dits { get; set; }
 
-    [JsonProperty("dahs")]
-    public int dahs { get; set; }
+        [JsonProperty("dahs")]
+        public int Dahs { get; set; }
 
-}
+    }
+    /// <summary>
+    /// Audio data
+    /// </summary>
+    public class Audio
+    {
+        [JsonProperty("audioFile")]
+        public string AudioFile { get; set; }
 
-public class data
-{
-    [JsonProperty("text")]
-    public string text { get; set; }
+        [JsonProperty("format")]
+        public string Format { get; set; }
 
-    [JsonProperty("morse")]
-    public string morse { get; set; }
+        [JsonProperty("downloadURL")]
+        public string DownloadURL { get; set; }
 
-    [JsonProperty("stats")]
-    public stats stats { get; set; }
+        [JsonProperty("duration")]
+        public string Duration { get; set; }
 
-    [JsonProperty("valid")]
-    public bool valid { get; set; }
+        [JsonProperty("frequency")]
+        public string Frequency { get; set; }
 
-}
+        [JsonProperty("sampleRate")]
+        public string SampleRate { get; set; }
 
-public class ResponseObj
-{
-    [JsonProperty("status")]
-    public string status { get; set; }
+        [JsonProperty("expires")]
+        public int Expires { get; set; }
 
-    [JsonProperty("error")]
-    public object error { get; set; }
+    }
+    /// <summary>
+    /// Data data
+    /// </summary>
+    public class Data
+    {
+        [JsonProperty("text")]
+        public string Text { get; set; }
 
-    [JsonProperty("data")]
-    public data data { get; set; }
+        [JsonProperty("morse")]
+        public string Morse { get; set; }
 
-    [JsonProperty("code")]
-    public int code { get; set; }
+        [JsonProperty("stats")]
+        public Stats Stats { get; set; }
 
-}
+        [JsonProperty("valid")]
+        public bool Valid { get; set; }
 
+        [JsonProperty("audio")]
+        public Audio Audio { get; set; }
+
+    }
+    /// <summary>
+    /// API Response object
+    /// </summary>
+    public class ResponseObj
+    {
+        [JsonProperty("status")]
+        public string Status { get; set; }
+
+        [JsonProperty("error")]
+        public object Error { get; set; }
+
+        [JsonProperty("data")]
+        public Data Data { get; set; }
+
+    }
 }
